@@ -1,7 +1,7 @@
 export function restart(data, counterClick) {
 	const startMenu = document.querySelector(`.startMenu`);
 	const end = document.querySelector(`.end`);
-	const restartButton = document.querySelector(`.restartGame`);						//todo возможн где-то здесь проблема
+	const restartButton = document.querySelector(`.restartGame`);					
 
 	restartButton.addEventListener(`click`, () => {
 		counterClick = 0;

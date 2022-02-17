@@ -14,7 +14,7 @@ function createCarts() {
 	for (let i = 0; i < arrPictureNumber.length; i++) {
 
 		let newDiv = document.createElement('div');
-		newDiv.classList.add('basicCart');   /// 'notOpen'
+		newDiv.classList.add('basicCart', 'notOpen');   /// 'notOpen'
 
 		let numberCart = arrPictureNumber[i] > 16 ? arrPictureNumber[i] - 16 : arrPictureNumber[i];
 		newDiv.style.background = `url('images/${numberCart}.png') center / cover no-repeat`;
