@@ -1,7 +1,6 @@
 import {activePlayer} from "./playerActive.js";
 import {endGame} from "./endGame.js";
 import {restart} from "./restartGame.js"
-import {ifNotCompare} from "./ifNotCompare.js"
 
 let arrayOpenedCarts = [];
 let	counterClick = 0;             															                                      
