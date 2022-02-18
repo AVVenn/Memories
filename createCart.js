@@ -38,6 +38,5 @@ export function addCartsAndModel(domNodes, data) {
 		}
 
 		data.carts.push(modelElem);
-		console.log(data.carts);
 	})
 }

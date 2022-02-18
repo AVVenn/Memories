@@ -96,7 +96,7 @@ body{
     display: grid;
     grid-template-columns: repeat(8, 1fr);
 	grid-template-rows:  repeat(4, 21vh);
-	grid-gap: 1em;
+	grid-gap: 0.7em;
     /* height: 90vh; */
 	justify-content: center;
 }
@@ -169,7 +169,15 @@ body{
 
 }
 
-@media screen and (max-width: 900px){
+@media screen and (max-width: 915px){
+    .main-container {
+        grid-template-columns: repeat(6, 11%);
+        grid-template-rows: repeat(6, 13.5vh);
+        grid-gap: 0.5em;
+        height: 100vh;
+    }
+    
+    
     .startMenu, .end {
         width: 90vw;
         height: 100vh;
@@ -188,26 +196,41 @@ body{
 }
 
 
-@media screen and (max-width: 767px) {
+@media screen and (max-width: 800px) {
     .main-container {
-        grid-gap: 0.6em;
         padding: 5px 5px 0px 5px;
+        grid-template-columns: repeat(5, 1fr);
+        grid-template-rows: repeat(7, 12.3vh);
+        grid-gap: 0.5em;
+        height: 100vh;
     }
 
     .basicPlayer {
         padding: 2px;
         font-size: 14px;
     }
+
+
 }
 
 @media screen and (max-width: 640px) {
     .main-container {
-        grid-gap: 0.4em;
+        grid-template-columns: repeat(5, 1fr);
+        grid-template-rows: repeat(7, 12vh);
+        grid-gap: 0.8em;
+        height: 80vh;
     }
 
 }
 
 @media screen and (max-width: 479px) {
+    .main-container {
+        grid-template-columns: repeat(4, 1fr);
+        grid-template-rows: repeat(8, 11vh);
+        grid-gap: 0.8em;
+        height: 100vh;
+    }
+    
     .startMenu {
         width: 100vw;
         height: 100vh;
@@ -250,7 +273,10 @@ body{
 
 
     .main-container {
-        grid-gap: 0.25em;
+        grid-template-columns: repeat(4, 1fr);
+        grid-template-rows: repeat(8, 11vh);
+        grid-gap: 0.4em;
+        height: 95vh;
     }
 
     .basicPlayer {

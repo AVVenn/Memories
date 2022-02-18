@@ -1,12 +1,12 @@
 import {activePlayer} from "./playerActive.js";
 import {endGame} from "./endGame.js";
 import {restart} from "./restartGame.js"
+import {ifNotCompare} from "./ifNotCompare.js"
 
 let arrayOpenedCarts = [];
 let	counterClick = 0;             															                                      
 
-export function basicGame(target, data, domNodes){	
-	console.log(data);					
+export function basicGame(target, data, domNodes){				
 	if (target.tagName === "MAIN") {												
 		return;
 	}
@@ -17,16 +17,15 @@ export function basicGame(target, data, domNodes){
 	target.classList.remove(`notOpen`);		
 	counterClick++									
 
-	!arrayOpenedCarts.includes(clickedCart) ? arrayOpenedCarts.push(clickedCart) : arrayOpenedCarts;		
+	!arrayOpenedCarts.includes(clickedCart) ? arrayOpenedCarts.push(clickedCart) : arrayOpenedCarts;	
+	
 
-	let playerMove = [
-		document.querySelector(`.playerTurn`) ,
-	 	data.players.find((player) => player.id ===  document.querySelector(`.playerTurn`).id) 				
-	];  								
-
+	let playerTurn = document.querySelector(`.playerTurn`);
+	let playerMove = [ playerTurn, data.players.find((player) => player.id === playerTurn.id)];  								
 
 
-	if (arrayOpenedCarts.length > 2) { 																				//todo вынести в модуль
+
+	if (arrayOpenedCarts.length > 2) { 																			
 		let [first, second] = [arrayOpenedCarts[0].id, arrayOpenedCarts[1].id];
 
 		document.getElementById(first).classList.add(`notOpen`);
@@ -42,7 +41,7 @@ export function basicGame(target, data, domNodes){
 	}
 	
 
-	if (arrayOpenedCarts.length === 2 && arrayOpenedCarts[0].numberCart === arrayOpenedCarts[1].numberCart) {   		//todo вынести в модуль
+	if (arrayOpenedCarts.length === 2 && arrayOpenedCarts[0].numberCart === arrayOpenedCarts[1].numberCart) {   		
 		let [first, second] = [arrayOpenedCarts[0].id, arrayOpenedCarts[1].id];
 
 		document.getElementById(first).classList.add(`guess`);

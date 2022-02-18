@@ -14,7 +14,7 @@ const data = {
 }
 	
 
-window.screen.width < 415 ? alert(`Для комфортной игры лучше использовать альбомную ориентацию  |___|`) : null;
+// window.screen.width < 415 ? alert(`Для комфортной игры лучше использовать альбомную ориентацию  |___|`) : null;
 
 domNodes.startContainer.addEventListener(`click`, ({target}) => {
 	startGame(target, domNodes, data);
