@@ -1,5 +1,8 @@
 import {startGame} from "./start.js";
-import {basicGame} from "./checkCompare.js"; 								
+import {basicGame} from "./checkCompare.js"; 	
+import {createStartMenu} from "./createStartMenu.js"
+
+createStartMenu ();
 
 let domNodes = {
 	mainContainer: document.querySelector(`.main-container`),
@@ -12,7 +15,6 @@ const data = {
 	carts: [],
 	players: []
 }
-	
 
 // window.screen.width < 415 ? alert(`Для комфортной игры лучше использовать альбомную ориентацию  |___|`) : null;
 

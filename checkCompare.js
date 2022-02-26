@@ -18,11 +18,8 @@ export function basicGame(target, data, domNodes){
 
 	!arrayOpenedCarts.includes(clickedCart) ? arrayOpenedCarts.push(clickedCart) : arrayOpenedCarts;	
 	
-
 	let playerTurn = document.querySelector(`.playerTurn`);
 	let playerMove = [ playerTurn, data.players.find((player) => player.id === playerTurn.id)];  								
-
-
 
 	if (arrayOpenedCarts.length > 2) { 																			
 		let [first, second] = [arrayOpenedCarts[0].id, arrayOpenedCarts[1].id];
@@ -52,7 +49,7 @@ export function basicGame(target, data, domNodes){
 		second = ``;
 
 		playerMove[1].points++;		
-		playerMove[0].textContent = `${playerMove[1].nick} = ${playerMove[1].points}`;			
+		playerMove[0].textContent = `${playerMove[1].nick} = ${playerMove[1].points}`;		
 
 		if (data.carts.filter((cart) => cart.guessed === false).length === 0){
 			endGame(data, domNodes, counterClick);

@@ -11,7 +11,8 @@ export function restart(data, counterClick) {
 		document.querySelectorAll(`.basicCart`).forEach((cart) => cart.remove());
 		document.querySelectorAll(`.basicPlayer`).forEach((player) => player.remove());
 
-		end.classList.add(`guess`);
+		// end.classList.add(`guess`);
+		end.remove();
 		startMenu.classList.remove(`guess`);
 	})
 }
