@@ -57,4 +57,3 @@ export function basicGame(target, data, domNodes){
 		}
 	} 
 };
-
