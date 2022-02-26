@@ -4,9 +4,6 @@ export function endGame(data, domNodes, counterClick) {
 	let sortDataPlyers = data.players.sort((a,b) => b.points - a.points);
 	let winner = sortDataPlyers.find((player) => (player.points === sortDataPlyers[0].points) && player.passedRound === false) || sortDataPlyers[0];
 
-	console.log(sortDataPlyers);
-	console.log(winner);
-
 	function createEnd () {
 		end = document.createElement('div');
 		end.classList.add('end');
