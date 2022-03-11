@@ -13,7 +13,7 @@ function createPlayers (numberPlayers) {
 	return arrayPlayers;
 }
 
-export function addPlayers (domNodes, data, numberPlayers) {
+export function addPlayers (domNodes, dataModel, numberPlayers) {
 	let players = createPlayers(numberPlayers - 1); 										
 	players.forEach((player) => {
 		domNodes.footer.append(player);
@@ -23,7 +23,7 @@ export function addPlayers (domNodes, data, numberPlayers) {
 			passedRound: false,
 			nick: player.nick
 		}
-		data.players.push(modelPlayers);
+		dataModel.players.push(modelPlayers);
 	})
 }
 

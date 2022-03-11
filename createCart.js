@@ -8,35 +8,38 @@ function generateArrayNumbers() {
 	return arr.sort(() => Math.random() - 0.5);
 }
 
-function createCarts() {
+function createCards() {
 	let arrPictureNumber = generateArrayNumbers();
-	let arrayCarts = [];
+	let arrayCards = [];
 	for (let i = 0; i < arrPictureNumber.length; i++) {
 
 		let newDiv = document.createElement('div');
 		newDiv.classList.add('basicCart', 'notOpen');   /// 'notOpen'
 
 		let numberCart = arrPictureNumber[i] > 16 ? arrPictureNumber[i] - 16 : arrPictureNumber[i];
-		newDiv.style.background = `url('images/${numberCart}.png') center / cover no-repeat`;
+		newDiv.style.backgroundImage = `url('images/${numberCart}.png')`;
 
 		newDiv.id = arrPictureNumber[i];
-		arrayCarts.push(newDiv);
+		arrayCards.push(newDiv);
 	}
 
-	return arrayCarts;
+	return arrayCards;
 }
 
-export function addCartsAndModel(domNodes, data) {
-	createCarts().forEach((item) => {
+export function addCardsAndModel(domNodes, dataModel) {
+	const cards = createCards();
+	const defaltCardValue = {   checked: false,
+								guessed: false
+	};
+	cards.forEach((item) => {
 		domNodes.mainContainer.append(item);
 
-		let modelElem = {
+		const modelElem = {
+			...defaltCardValue,
 			id: +item.id,
 			numberCart: +item.id > 16 ? item.id - 16 : +item.id,
-			checked: false,
-			guessed: false
 		}
 
-		data.carts.push(modelElem);
+		dataModel.cards.push(modelElem);
 	})
 }

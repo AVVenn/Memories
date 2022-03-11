@@ -1,10 +1,10 @@
-export  function activePlayer (data) { 
+export  function activePlayer (dataModel) { 
 															
-	let playerInData = data.players.find((player) => player.passedRound === false);
+	let playerInData = dataModel.players.find((player) => player.passedRound === false);
 
 	if (playerInData === undefined) {
-		playerInData = data.players[0];
-		data.players.forEach((player) => player.passedRound = false);
+		playerInData = dataModel.players[0];
+		dataModel.players.forEach((player) => player.passedRound = false);
 	}
 
 	playerInData.passedRound = true;

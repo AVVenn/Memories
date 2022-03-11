@@ -1,18 +1,17 @@
-export function restart(data, counterClick) {
+export function restart(dataModel, counterClick) {
 	const startMenu = document.querySelector(`.startMenu`);
-	const end = document.querySelector(`.end`);
+	const endGameModal = document.querySelector(`.end`);
 	const restartButton = document.querySelector(`.restartGame`);					
 
 	restartButton.addEventListener(`click`, () => {
 		counterClick = 0;
-		data.carts.length = 0;
-		data.players.length = 0;
-
-		document.querySelectorAll(`.basicCart`).forEach((cart) => cart.remove());
+		dataModel.cards.length = 0;
+		dataModel.players.length = 0;
+ 
+		document.querySelectorAll(`.basicCart`).forEach((card) => card.remove());
 		document.querySelectorAll(`.basicPlayer`).forEach((player) => player.remove());
 
-		// end.classList.add(`guess`);
-		end.remove();
+		endGameModal.remove();
 		startMenu.classList.remove(`guess`);
 	})
 }

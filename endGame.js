@@ -1,14 +1,14 @@
-export function endGame(data, domNodes, counterClick) {
-	let end = document.querySelector('.end');
+export function endGame(dataModel, domNodes, counterClick) {
+	let endGameModal = document.querySelector('.end');
 
-	let sortDataPlyers = data.players.sort((a,b) => b.points - a.points);
-	let winner = sortDataPlyers.find((player) => (player.points === sortDataPlyers[0].points) && player.passedRound === false) || sortDataPlyers[0];
+	let sortDataPlyers = dataModel.players.sort((a,b) => b.points - a.points);
+	let winner = sortDataPlyers.find((player) => (player.points === sortDataPlyers[0].points) && !player.passedRound) || sortDataPlyers[0];
 
-	function createEnd () {
-		end = document.createElement('div');
-		end.classList.add('end');
+	if(!endGameModal) {
+		endGameModal = document.createElement('div');
+		endGameModal.classList.add('end');
 
-		end.insertAdjacentHTML(`afterbegin`,  
+		endGameModal.insertAdjacentHTML(`afterbegin`,  
 		`
 		<h2 class="h2">Игра завершена!!!</h2>
 		<div class ="winnersContainer">
@@ -17,18 +17,10 @@ export function endGame(data, domNodes, counterClick) {
 			<div class="restartGame">Рестарт</div>
 		</div>
 		`);
-	}
-
-
-	if(end === null) {
-		createEnd (); 
-	}
-
-	// end === null ? createEnd () : end.classList.remove(`guess`);
-	// end.classList.remove(`guess`);		
+	}	
 
 	domNodes.mainContainer.classList.add(`guess`);
 	domNodes.footer.classList.add(`guess`);
 
-	document.querySelector(`body`).append(end);
+	document.querySelector(`body`).append(endGameModal);
 }
